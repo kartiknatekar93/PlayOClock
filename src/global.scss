@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-family: Roundedltblack;
+  src: url("../public/fonts/HelveticaRoundedLT-Black.otf");
+}
+@font-face {
+  font-family: Bolditalic;
+  src: url("../public/fonts/Montserrat-BoldItalic.ttf");
+}
+@font-face {
+  font-family: Italic;
+  src: url("../public/fonts/Montserrat-Italic.ttf");
+}
+
+@font-face {
+  font-family: Regular;
+  src: url("../public/fonts/Montserrat-Regular.otf");
+}
