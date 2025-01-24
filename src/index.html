@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script
+      defer
+      src="https://unplug.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
     <script type="module" src="main.js"></script>
   </head>
   <body>
-    <section class="section-hero">
+    <section class="section-hero" id="hero">
       <div class="hero">
         <div class="hero-textbox">
           <h1 class="heading-primary">what time is it? it's</h1>
@@ -21,8 +25,10 @@
             </div>
             <p class="address">We're located in Indiranagar/Domlur near EGL</p>
             <a class="map-link" href="#">click here for our exact location</a>
-            <!-- <p class="map-link"></p> -->
           </div>
+          <a class="map-link-mobile" href="#"
+            >click here for our exact location</a
+          >
           <div class="co-located">
             <p class="co-located-text">co-located with</p>
             <div class="rr-logo">
@@ -34,11 +40,13 @@
           </div>
         </div>
         <div class="hero-vidbox">
-          <video class="video" autoplay loop muted>
-            <source src="Images/video.mp4" type="video/mp4" />
-          </video>
-          <div class="opennow-logo">
-            <img src="Images/OpenNow.png" alt="" />
+          <div class="video-container">
+            <video class="video" width="1080" height="1920" autoplay loop muted>
+              <source src="Images/video.mp4" type="video/mp4" />
+            </video>
+            <div class="opennow-logo">
+              <img src="Images/OpenNow.png" alt="" />
+            </div>
           </div>
         </div>
       </div>
@@ -61,19 +69,24 @@
       </a>
       <nav class="main-nav">
         <ul class="main-nav-list">
-          <li><a class="main-nav-link" href="">home</a></li>
-          <li><a class="main-nav-link" href="">pricing</a></li>
-          <li><a class="main-nav-link" href="">about us</a></li>
-          <li><a class="main-nav-link" href="">contact</a></li>
+          <li><a class="main-nav-link" href="#hero">home</a></li>
+          <li><a class="main-nav-link" href="#pricing">pricing</a></li>
+          <li><a class="main-nav-link" href="#aboutus">about us</a></li>
+          <li><a class="main-nav-link" href="#contact">contact</a></li>
           <li>
-            <a class="main-nav-logo" href=""
+            <a class="main-nav-logo" href="#"
               ><img src="Images/Instagram.svg" alt=""
             /></a>
           </li>
+          <div class="bar">
+            <button></button>
+            <button></button>
+            <button></button>
+          </div>
         </ul>
       </nav>
     </header>
-    <section class="section-pricing">
+    <section class="section-pricing" id="pricing">
       <div class="pricing">
         <h1 class="heading-primary">pricing & usage</h1>
         <p class="pricing-text">
@@ -98,7 +111,7 @@
         <img src="Images/Emoji01.png" alt="" />
       </div>
     </section>
-    <section class="section-aboutus">
+    <section class="section-aboutus" id="aboutus">
       <div class="about-us">
         <div class="about-us-section">
           <h1 class="heading-primary">play o'clock</h1>
@@ -115,9 +128,13 @@
           </p>
         </div>
         <div class="slider-show">
-          <div class="imagebox">
-            <img src="Images/slideimg1.png" alt="" />
+          <div class="slideshow-container">
+            <img class="slide" src="Images/slideimg1.png" alt="" />
           </div>
+          <div class="dots">
+            <div class="dots-container"></div>
+          </div>
+
           <div class="bg-1">
             <img src="Images/Emoji04.png" alt="" />
           </div>
@@ -130,7 +147,7 @@
         <img src="Images/bg01.png" alt="" />
       </div>
     </section>
-    <section class="section-contact">
+    <section class="section-contact" id="contact">
       <div class="contact">
         <h1 class="heading-primary">contact us</h1>
         <p class="contact-text">

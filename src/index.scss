@@ -5,7 +5,7 @@
   background-color: #ec2838;
   .hero {
     position: relative;
-    max-width: 120rem;
+    max-width: 130rem;
     display: grid;
     grid-template-columns: 1.7fr 1fr;
     margin: 0 auto;
@@ -15,9 +15,18 @@
     align-items: center;
     gap: 4.8rem;
     z-index: 1;
+    @include tablet {
+      grid-template-columns: 1fr;
+      padding: 10rem 10rem 0 10rem;
+      gap: 1rem;
+    }
+    @include tablet-portrait {
+      grid-template-columns: 1fr;
+      padding: 10rem 10rem 0 10rem;
+      gap: 1rem;
+    }
     .hero-textbox {
       color: white;
-      grid-column: 1 /2;
       .heading-primary {
         font-family: Roundedltblack !important;
         font-size: 4rem;
@@ -46,25 +55,48 @@
         gap: 1rem;
         font-size: 1.5rem;
         .map-icon {
-          display: flex;
           width: 5%;
           img {
             width: 100%;
             height: auto;
+          }
+          .address {
+            font-family: Italic;
           }
         }
         .address {
           font-family: Italic;
         }
         .map-link {
+          display: block;
           font-family: Italic;
           color: white;
+          @include tablet-s {
+            display: none;
+          }
+        }
+      }
+      .map-link-mobile {
+        display: none;
+        justify-content: center;
+        font-family: Italic;
+        color: white;
+        font-size: 1.5rem;
+        @include tablet-s {
+          display: flex;
         }
       }
       .co-located {
         display: flex;
         align-items: center;
         gap: 1rem;
+        @include tablet {
+          justify-content: center;
+        }
+        @include tablet-portrait {
+          justify-content: center;
+        }
+
         .co-located-text {
           font-family: Regular;
           text-transform: uppercase;
@@ -85,20 +117,71 @@
     }
     .hero-vidbox {
       position: relative;
-      .video {
-        width: 100%;
-        height: 100%;
-        border-radius: 3rem;
-        box-shadow: 0 0 10px grey;
+      @include tablet {
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
-      .opennow-logo {
-        position: absolute;
-        width: 40%;
-        bottom: 0;
-        left: 0;
-        transform: translate(-50%, 20%);
-        img {
+      @include tablet-portrait {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .video-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .video {
           width: 100%;
+          height: 100%;
+          border-radius: 3rem;
+          box-shadow: 0 0 10px grey;
+          @include tablet {
+            width: 50%;
+            height: auto;
+          }
+          @include tablet-portrait {
+            width: 50%;
+            height: auto;
+          }
+          @include mobile {
+            width: 70%;
+            height: auto;
+          }
+        }
+        .opennow-logo {
+          position: absolute;
+          width: 40%;
+          bottom: 0;
+          left: 0;
+          transform: translate(-50%, 20%);
+          img {
+            width: 100%;
+          }
+          @include tablet {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: auto;
+            top: 0;
+            bottom: auto;
+            width: 20%;
+            transform: translate(-100%, -20%);
+          }
+          @include tablet-portrait {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: auto;
+            top: 0;
+            bottom: auto;
+            width: 20%;
+            transform: translate(-100%, -20%);
+          }
+          @include mobile {
+            width: 30%;
+          }
         }
       }
     }
@@ -130,6 +213,12 @@
     position: absolute;
     width: 20%;
     padding: 4.8rem;
+    @include tablet {
+      width: 25%;
+    }
+    @include mobile {
+      width: 30%;
+    }
     img {
       width: 100%;
     }
@@ -164,6 +253,9 @@
     img {
       width: 100%;
     }
+    @include tablet-s {
+      width: 40%;
+    }
   }
   .main-nav {
     .main-nav-list {
@@ -179,6 +271,16 @@
         font-family: Regular;
         font-weight: 500;
         font-size: 1.5rem;
+        &:hover,
+        :visited {
+          color: #fbc613;
+        }
+        @include tablet {
+          font-size: 2rem;
+        }
+        @include tablet-s {
+          display: none;
+        }
       }
       .main-nav-logo {
         display: inline-block;
@@ -187,18 +289,34 @@
           width: 100%;
         }
       }
+      .bar {
+        display: none;
+        flex-direction: column;
+        width: 5rem;
+        gap: 0.5rem;
+        cursor: pointer;
+        button {
+          border: 1px solid #fff;
+        }
+        @include tablet-s {
+          display: flex;
+        }
+      }
     }
   }
 }
 .section-pricing {
   position: relative;
   background-color: #ec2838;
-  z-index: -2;
   .pricing {
+    position: relative;
     margin: 0 auto;
-    max-width: 120rem;
-    // min-height: 100vh;
+    max-width: 130rem;
     padding: 4rem;
+    z-index: 3;
+    @include tablet {
+      padding: 10rem 10rem 0 10rem;
+    }
     .heading-primary {
       margin: 0 auto;
       font-family: Roundedltblack;
@@ -209,7 +327,7 @@
       font-size: 4.8rem;
     }
     .pricing-text {
-      font-family: Light;
+      font-family: Regular;
       color: #e6e6e6;
       font-size: 3rem;
       text-align: center;
@@ -219,6 +337,9 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
       margin-top: 8rem;
+      @include tablet {
+        grid-template-columns: 1fr;
+      }
       .pricing-img1 {
         img {
           width: 100%;
@@ -236,6 +357,7 @@
     bottom: 0;
     left: 0;
     width: 40%;
+    z-index: 1;
     transform: translate(-70%, 20%) rotateZ(20deg);
     img {
       width: 100%;
@@ -246,6 +368,14 @@
     width: 15%;
     bottom: 10%;
     left: 0;
+    z-index: 2;
+    @include laptop {
+      top: 0;
+      right: 0;
+      bottom: auto;
+      left: auto;
+      transform: scaleX(1) translate(20%, 10%);
+    }
     transform: scaleX(-1) translateX(20%);
     img {
       width: 100%;
@@ -255,17 +385,22 @@
 .section-aboutus {
   position: relative;
   background-color: #ec2838;
-  z-index: -2;
   .about-us {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    max-width: 120rem;
-    // min-height: 100vh;
+    max-width: 130rem;
     padding: 4rem;
     gap: 9.6rem;
+    @include laptop {
+      padding: 6rem;
+    }
+    @include tablet {
+      grid-template-columns: 1fr;
+      padding: 10rem;
+    }
     .about-us-section {
       .heading-primary {
         font-family: Roundedltblack;
@@ -275,7 +410,7 @@
         text-transform: uppercase;
       }
       .about-us-text {
-        font-family: Light;
+        font-family: Regular;
         color: #e6e6e6;
         font-size: 2.5rem;
         text-align: center;
@@ -283,20 +418,51 @@
     }
     .slider-show {
       position: relative;
-      .imagebox {
+      .slideshow-container {
         position: relative;
         z-index: 3;
         object-fit: cover;
-        img {
+        .slide {
           width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: opacity 1s ease;
         }
       }
+      .dots {
+        display: flex;
+        position: absolute;
+        bottom: 1rem;
+        z-index: 4;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        .dots-container {
+          display: flex;
+          gap: 1rem;
+          .dot {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+          }
+          .dot.active {
+            background-color: #fff;
+          }
+        }
+      }
+
       .bg-1 {
         z-index: 2;
         position: absolute;
         bottom: 0;
         width: 30%;
         transform: translate(-60%, 50%);
+        @include tablet {
+          display: none;
+        }
         img {
           width: 100%;
         }
@@ -308,6 +474,7 @@
         right: 0;
         width: 30%;
         transform: translate(50%, 50%);
+
         img {
           width: 100%;
         }
@@ -331,11 +498,14 @@
   background-color: #ec2838;
   .contact {
     position: relative;
-    max-width: 120rem;
+    max-width: 130rem;
     margin: 0 auto;
     padding: 4rem;
-    // min-height: 100vh;
     z-index: 5;
+    @include tablet {
+      padding-left: 10rem;
+      padding-right: 10rem;
+    }
     .heading-primary {
       margin: 0 auto;
       font-family: Roundedltblack;
@@ -347,7 +517,7 @@
     }
     .contact-text {
       margin: 0;
-      font-family: Light;
+      font-family: regular;
       color: #e6e6e6;
       font-size: 2.5rem;
       text-align: center;
@@ -362,12 +532,15 @@
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: 1rem;
+          @include mobile {
+            grid-template-columns: 1fr;
+          }
           .form-name {
             #name {
               width: 100%;
               border-radius: 1rem;
-              font-family: Light;
-              padding: 3rem;
+              font-family: Regular;
+              padding: 2.5rem;
               font-size: 2rem;
             }
           }
@@ -375,8 +548,8 @@
             #mobile {
               width: 100%;
               border-radius: 1rem;
-              font-family: Light;
-              padding: 3rem;
+              font-family: Regular;
+              padding: 2.5rem;
               font-size: 2rem;
             }
           }
@@ -385,8 +558,8 @@
           #email {
             width: 100%;
             border-radius: 1rem;
-            font-family: Light;
-            padding: 3rem;
+            font-family: Regular;
+            padding: 2.5rem;
             font-size: 2rem;
           }
         }
@@ -395,8 +568,8 @@
             width: 100%;
             height: 20rem;
             border-radius: 1rem;
-            font-family: Light;
-            padding: 3rem;
+            font-family: Regular;
+            padding: 2.5rem;
             font-size: 2rem;
             resize: none;
           }
@@ -404,6 +577,10 @@
         .btn {
           align-self: center;
           justify-self: center;
+          transition: transform 0.3s ease;
+          &:hover {
+            transform: scale(1.1);
+          }
           .send {
             width: 25rem;
             padding: 2rem;
@@ -445,7 +622,8 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    transform: translate(-10%, -10%) scaleX(-1) rotateZ(-10deg);
+    width: 15%;
+    transform: translate(-20%, -20%) scaleX(-1) rotateZ(-10deg);
     z-index: 4;
     img {
       width: 100%;
@@ -471,4 +649,8 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 3s;
 }
