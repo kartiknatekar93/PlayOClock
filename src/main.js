@@ -16,7 +16,9 @@ let currentIndex = 0;
 const slideElement = document.querySelector(".slide");
 const dotsContainer = document.querySelector(".dots-container");
 const alllinks = document.querySelectorAll("a:link");
-
+const sectionnavmob = document.querySelector(".section-navmob");
+const open = document.querySelector(".bar"); //close-btn
+const close = document.querySelector(".close-btn");
 // smooth scrolling
 alllinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
@@ -71,3 +73,13 @@ function createDots() {
 setInterval(nextSlide, 3000);
 createDots();
 updateDots();
+
+//mobile-navigation
+open.addEventListener("click", function (e) {
+  e.preventDefault();
+  sectionnavmob.classList.toggle("nav-open");
+});
+close.addEventListener("click", function (e) {
+  e.preventDefault();
+  sectionnavmob.classList.toggle("nav-open");
+});
