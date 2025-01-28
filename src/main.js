@@ -1,4 +1,5 @@
 import "./index.scss";
+import { activateEnquiry } from "./enquiry";
 
 const images = [
   "slideimg1.png",
@@ -19,6 +20,8 @@ const alllinks = document.querySelectorAll("a:link");
 const sectionnavmob = document.querySelector(".section-navmob");
 const open = document.querySelector(".bar"); //close-btn
 const close = document.querySelector(".close-btn");
+
+const alllink = document.querySelectorAll(".nav-link");
 // smooth scrolling
 alllinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
@@ -35,6 +38,13 @@ alllinks.forEach(function (link) {
       const sectionEl = document.querySelector(href);
       sectionEl.scrollIntoView({ behavior: "smooth" });
     }
+  });
+});
+
+alllink.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    sectionnavmob.classList.toggle("nav-open");
   });
 });
 
@@ -83,3 +93,5 @@ close.addEventListener("click", function (e) {
   e.preventDefault();
   sectionnavmob.classList.toggle("nav-open");
 });
+
+activateEnquiry("PlayOClock");

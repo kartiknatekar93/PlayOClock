@@ -9,6 +9,28 @@
       src="https://unplug.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
     ></script>
     <script type="module" src="main.js"></script>
+    <style>
+      .section-navmob {
+        transform: translateX(100%);
+      }
+      .section-hero {
+        .hero {
+          opacity: 0;
+        }
+        .bg-1 {
+          opacity: 0;
+        }
+        .bg-2 {
+          opacity: 0;
+        }
+        .emoji-1 {
+          opacity: 0;
+        }
+        .emoji-2 {
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
   <body>
     <section class="section-hero" id="hero">
@@ -23,7 +45,7 @@
             <div class="map-icon">
               <img src="Images/Location.svg" alt="" />
             </div>
-            <p class="address">We're located in Indiranagar/Domlur near EGL</p>
+            <p class="address">We're located in Indiranagar/Domlur near EGL.</p>
             <a class="map-link" href="#">click here for our exact location</a>
           </div>
           <a class="map-link-mobile" href="#"
@@ -163,7 +185,7 @@
           For bulk bookings, birthday party packages, partnership opportunities
           and other inquiries, please get in touch below:
         </p>
-        <div class="form-fill">
+        <div class="form-fill" id="enquiry_form">
           <form action="">
             <div class="form-group">
               <div class="form-name">
@@ -182,13 +204,19 @@
               <input type="email" id="email" name="email" placeholder="Email" />
             </div>
             <div class="text-area">
+              <!-- <input
+                type="message"
+                id="message"
+                name="message"
+                placeholder="message"
+              /> -->
               <textarea
                 id="message"
                 name="message"
                 placeholder="Message"
               ></textarea>
             </div>
-            <div class="btn">
+            <div class="btn" id="btn_subscribe">
               <button class="send">send</button>
             </div>
           </form>
