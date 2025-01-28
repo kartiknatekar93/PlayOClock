@@ -17,5 +17,8 @@
     "scss": "^0.2.4",
     "vite": "^6.0.11",
     "vite-plugin-mkcert": "^1.17.6"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1"
   }
 }

@@ -1,3 +1,4 @@
+// import * as $ from jQuery
 let contact_name = null;
 let contact_mobile = null;
 let contact_email = null;
@@ -6,12 +7,17 @@ let isValid = false;
 // import Global from "./global";
 
 function activateEnquiry(contactFrom) {
-  document.querySelector("#btn_subscribe").addEventListener("click", () => {
+  document.querySelector("#btn_subscribe").addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("clicked");
     contact_name = String(document.getElementById("name").value);
     contact_mobile = String(document.getElementById("mobile").value);
     contact_email = String(document.getElementById("email").value);
     contact_message = String(document.getElementById("message").value);
-
+    console.log(contact_name);
+    console.log(contact_mobile);
+    console.log(contact_email);
+    console.log(contact_message);
     isValid = true;
 
     // $("input#contact_name").removeClass("error");
@@ -23,7 +29,7 @@ function activateEnquiry(contactFrom) {
       //   $("input#contact_name").addClass("error");
       isValid = false;
     }
-    if (contact_company.length <= 0) {
+    if (contact_message.length <= 0) {
       //   $("input#contact_company").addClass("error");
       isValid = false;
     }
@@ -49,12 +55,12 @@ function activateEnquiry(contactFrom) {
     } else {
       //   Global.enquirySubmitted = true;
     }
-
     var data = $("#enquiry_form").serializeArray();
     data.push({ name: "contact_from", value: contactFrom });
-    $.post("page.php", data);
+    console.log(data);
+    // $.post("page.php", data);
     $.ajax({
-      url: "https://www.alivenow.in/getintouch_v2.php",
+      url: "https://www.alivenow.in/getintouch_v3.php",
       type: "POST",
       data: data,
       success: function (result) {
