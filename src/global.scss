@@ -25,6 +25,12 @@ html {
   @media (max-width: 59rem) {
     font-size: 56.25%;
   }
+  @media (max-width: 48rem) {
+    font-size: 50%;
+  }
+  @media (max-width: 38rem) {
+    font-size: 40%;
+  }
   @media (max-width: 27rem) {
     font-size: 33%;
   }
@@ -77,6 +83,11 @@ html {
 }
 @mixin tablet-s {
   @media (max-width: 48rem) {
+    @content;
+  }
+}
+@mixin mobile-l {
+  @media (max-width: 38rem) {
     @content;
   }
 }

@@ -49,14 +49,14 @@ function activateEnquiry(contactFrom) {
     } else {
       globalState.enquirysubmitted = true;
     }
-    var data = $("#enquiry_form").serializeArray();
-    data.push({ name: "contact_from", value: contactFrom });
-    $.ajax({
-      url: "https://www.alivenow.in/getintouch_v3.php",
-      type: "POST",
-      data: data,
-      success: function (result) {},
-    });
+    // var data = $("#enquiry_form").serializeArray();
+    // data.push({ name: "contact_from", value: contactFrom });
+    // $.ajax({
+    //   url: "https://www.alivenow.in/getintouch_v3.php",
+    //   type: "POST",
+    //   data: data,
+    //   success: function (result) {},
+    // });
     // $(".user_data_sec").css("overflow", "hidden");
     // $(".enquiry_sec #btn_subscribe").removeClass("active");
     // $(".enquiry_sec .sec1").removeClass("active");
@@ -66,9 +66,11 @@ function activateEnquiry(contactFrom) {
     setTimeout(function () {
       setTimeout(function () {
         var newDiv = $(
-          "<h1>Submitted successfully! We&rsquo;ll get back to you soon. </h1>"
+          "<h1>Submitted successfully! <br>We&rsquo;ll get back to you soon. </h1>"
         ).addClass("thankyou");
         $("#thanku").after(newDiv);
+        $(".tickmiddle").addClass("visible");
+        $("form").addClass("invisible");
         contact_name.value = "";
         contact_mobile.value = "";
         contact_email.value = "";

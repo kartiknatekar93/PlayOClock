@@ -377,10 +377,10 @@
     padding: 4rem;
     z-index: 3;
     @include tablet {
-      padding: 10rem 10rem 0 10rem;
+      padding: 5rem 10rem 0 10rem;
     }
     @include iphone {
-      padding: 0 6rem 0 6rem;
+      padding: 3rem 6rem 0 6rem;
     }
     .heading-primary {
       margin: 0 auto;
@@ -388,7 +388,8 @@
       color: white;
       text-transform: uppercase;
       text-align: center;
-      padding: 4.8rem 0;
+      padding: 3.6rem 0;
+      padding-bottom: 2rem;
       font-size: 4.8rem;
     }
     .pricing-text {
@@ -402,7 +403,8 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
-      margin-top: 8rem;
+      // margin-top: 8rem;
+      padding-top: 3.6rem;
       @include tablet {
         grid-template-columns: 1fr;
       }
@@ -467,10 +469,10 @@
     }
     @include tablet {
       grid-template-columns: 1fr;
-      padding: 10rem;
+      padding: 5rem 10rem 0 10rem;
     }
     @include iphone {
-      padding: 2rem 6rem 0 6rem;
+      padding: 3rem 6rem 0 6rem;
     }
     .about-us-section {
       .heading-primary {
@@ -479,6 +481,9 @@
         text-align: center;
         color: white;
         text-transform: uppercase;
+        padding: 3.6rem 0;
+        padding-bottom: 2rem;
+        margin: 0;
       }
       .about-us-text {
         position: relative;
@@ -487,6 +492,7 @@
         color: #e6e6e6;
         font-size: 3rem;
         text-align: center;
+        margin: 0;
       }
     }
     .slider-show {
@@ -580,11 +586,10 @@
     z-index: 5;
     padding-top: 0;
     @include tablet {
-      padding-left: 10rem;
-      padding-right: 10rem;
+      padding: 5rem 10rem 10rem 10rem;
     }
     @include iphone {
-      padding: 0 6rem 6rem 6rem;
+      padding: 3rem 6rem 6rem 6rem;
     }
     .heading-primary {
       margin: 0 auto;
@@ -592,7 +597,8 @@
       color: white;
       text-transform: uppercase;
       text-align: center;
-      padding: 4.8rem 0;
+      padding: 3.6rem 0;
+      padding-bottom: 2rem;
       font-size: 4.8rem;
     }
     .contact-text {
@@ -603,15 +609,23 @@
       text-align: center;
     }
     .form-fill {
-      margin-top: 4.8rem;
+      position: relative;
+      padding-top: 3.6rem;
       form {
+        position: relative;
+        opacity: 1;
         display: grid;
         grid-template-columns: 1fr;
         gap: 1rem;
+        transition: opacity 1s ease-in;
+        z-index: 999;
         .form-group {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: 1rem;
+          @include mobile-l {
+            grid-template-columns: 1fr;
+          }
           @include mobile {
             grid-template-columns: 1fr;
           }
@@ -676,7 +690,27 @@
           }
         }
       }
+
+      .tickmiddle {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        transition: opacity 1s ease-in;
+        .tick {
+          width: 30%;
+          max-width: 200px;
+          img {
+            width: 100%;
+          }
+        }
+      }
     }
+
     .footer {
       font-size: 1.2rem;
       font-family: Italic;
@@ -834,5 +868,11 @@ textarea:focus {
   text-align: center;
   color: #ddd;
   font-family: Regular;
-  font-size: 2rem;
+  font-size: 3rem;
+}
+.invisible {
+  opacity: 0 !important;
+}
+.visible {
+  opacity: 1 !important;
 }
