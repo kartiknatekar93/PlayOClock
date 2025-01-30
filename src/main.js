@@ -22,10 +22,19 @@ const open = document.querySelector(".bar"); //close-btn
 const close = document.querySelector(".close-btn");
 
 const alllink = document.querySelectorAll(".nav-link");
+
+let contact_name = null;
+let contact_mobile = null;
+let contact_email = null;
+contact_name = document.getElementById("name");
+contact_mobile = document.getElementById("mobile");
+contact_email = document.getElementById("email");
+window.addEventListener("click", function (e) {
+  document.querySelectorAll(".warning-box").forEach((box) => box.remove());
+});
 // smooth scrolling
 alllinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
-    e.preventDefault();
     const href = link.getAttribute("href");
 
     if (href === "#")
@@ -35,6 +44,7 @@ alllinks.forEach(function (link) {
       });
 
     if (href !== "#" && href.startsWith("#")) {
+      e.preventDefault();
       const sectionEl = document.querySelector(href);
       sectionEl.scrollIntoView({ behavior: "smooth" });
     }

@@ -1,71 +1,61 @@
-// import * as $ from jQuery
+import { globalState } from "./global";
 let contact_name = null;
 let contact_mobile = null;
 let contact_email = null;
-let contact_message = null;
-let isValid = false;
-// import Global from "./global";
-
+let message = null;
 function activateEnquiry(contactFrom) {
   document.querySelector("#btn_subscribe").addEventListener("click", (e) => {
+    e.stopPropagation();
     e.preventDefault();
-    console.log("clicked");
-    contact_name = String(document.getElementById("name").value);
-    contact_mobile = String(document.getElementById("mobile").value);
-    contact_email = String(document.getElementById("email").value);
-    contact_message = String(document.getElementById("message").value);
-    console.log(contact_name);
-    console.log(contact_mobile);
-    console.log(contact_email);
-    console.log(contact_message);
-    isValid = true;
-
-    // $("input#contact_name").removeClass("error");
-    // $("input#contact_email").removeClass("error");
-    // $("input#contact_company").removeClass("error");
-    // $("input#contact_mobile").removeClass("error");
-
-    if (contact_name.length <= 0) {
-      //   $("input#contact_name").addClass("error");
+    let isValid = true;
+    contact_name = document.getElementById("name");
+    contact_mobile = document.getElementById("mobile");
+    contact_email = document.getElementById("email");
+    message = document.getElementById("message");
+    document.querySelectorAll(".warning-box").forEach((box) => box.remove());
+    document.querySelector(".thankyou")?.remove();
+    if (
+      contact_email.value.trim() === "" ||
+      !/\S+@\S+\.\S+/.test(contact_email.value)
+    ) {
+      addWarningBox(contact_email, "Enter Valid Email");
+      addShakeEffect(contact_email);
       isValid = false;
     }
-    if (contact_message.length <= 0) {
-      //   $("input#contact_company").addClass("error");
+    if (
+      contact_mobile.value.trim() === "" ||
+      !/^\d{10}$/.test(contact_mobile.value)
+    ) {
+      addWarningBox(contact_mobile, "Enter Valid Mobile Number");
+      addShakeEffect(contact_mobile);
       isValid = false;
     }
-    if (contact_email.length <= 0) {
-      //   $("input#contact_email").addClass("error");
+    if (contact_name.value.trim() === "") {
+      addWarningBox(contact_name, "Enter Name");
+      addShakeEffect(contact_name);
       isValid = false;
     }
-    var re =
-      /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-    var m = re.test(contact_email);
-    if (!m) {
-      //   $("input#contact_email").addClass("error");
+    if (
+      contact_name.value.trim() === "" &&
+      contact_mobile.value.trim() === "" &&
+      contact_email.value.trim() === ""
+    ) {
+      addWarningBox(contact_name, "Enter Name ");
+      addShakeEffect(contact_name);
       isValid = false;
     }
-
-    if (contact_mobile.length <= 0 || isNaN(contact_mobile)) {
-      //   $("input#contact_mobile").addClass("error");
-      isValid = false;
-    }
-
-    if (!isValid) {
+    if (!isValid || globalState.enquirysubmitted) {
       return false;
     } else {
-      //   Global.enquirySubmitted = true;
+      globalState.enquirysubmitted = true;
     }
     var data = $("#enquiry_form").serializeArray();
     data.push({ name: "contact_from", value: contactFrom });
-    console.log(data);
-    // $.post("page.php", data);
     $.ajax({
       url: "https://www.alivenow.in/getintouch_v3.php",
       type: "POST",
       data: data,
-      success: function (result) {
-        console.log(result);
-      },
+      success: function (result) {},
     });
     // $(".user_data_sec").css("overflow", "hidden");
     // $(".enquiry_sec #btn_subscribe").removeClass("active");
@@ -73,12 +63,43 @@ function activateEnquiry(contactFrom) {
     // $(
     //   ".user_data_sec .field1, .user_data_sec .field2, .user_data_sec .field3, .user_data_sec .field4"
     // ).removeClass("active");
-    // setTimeout(function () {
-    //   setTimeout(function () {
-    //     $(".thank-sec .row span").addClass("active");
-    //   }, 0);
-    // }, 650);
+    setTimeout(function () {
+      setTimeout(function () {
+        var newDiv = $(
+          "<h1>Submitted successfully! We&rsquo;ll get back to you soon. </h1>"
+        ).addClass("thankyou");
+        $("#thanku").after(newDiv);
+        contact_name.value = "";
+        contact_mobile.value = "";
+        contact_email.value = "";
+        message.value = "";
+      }, 0);
+    }, 650);
   });
 }
+function addWarningBox(target, message) {
+  document.querySelectorAll(".warning-box").forEach((box) => box.remove());
+  const element = document.createElement("div");
+  element.classList.add("warning-box");
+  element.textContent = message;
+  target.parentElement.style.position = "relative";
+  target.parentElement.appendChild(element);
 
+  setTimeout(() => {
+    element.classList.add("show");
+  }, 10);
+
+  target.addEventListener("focus", function () {
+    element.remove();
+  });
+  return false;
+}
+
+function addShakeEffect(inputElement) {
+  inputElement.classList.add("input-shake");
+
+  inputElement.addEventListener("animationend", function () {
+    inputElement.classList.remove("input-shake");
+  });
+}
 export { activateEnquiry };

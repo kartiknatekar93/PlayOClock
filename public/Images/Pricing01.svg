@@ -47,6 +47,6 @@ src: url(data:application/octet-stream;base64,T1RUTwAKAIAAAwAgQ0ZGIHikQ4kAAACsAA
   <rect class="st6" x="1" y=".37" width="187.42" height="118.46" rx="14.2" ry="14.2"/>
   <text  class="st2" transform="translate(37.62 54.35) scale(.99 1)"><tspan x="0" y="0">Monday to</tspan><tspan x="6.37" y="24.38">Thursday</tspan></text>
   <text  class="st2" transform="translate(207.7 101.94) scale(.99 1)"><tspan x="0" y="0">FOR 90 MINUTES</tspan></text>
-  <text  class="st1" transform="translate(58.39 145.81) scale(.99 1)"><tspan class="st3" x="0" y="0">Additional 30 minutes - </tspan><tspan class="st5" x="263.97" y="0">₹ </tspan><tspan class="st3" x="280.31" y="0">100</tspan></text>
+  <text  class="st1" transform="translate(58.39 145.81) scale(.99 1)"><tspan class="st3" x="0" y="0">Additional 30 minutes</tspan><tspan class="st5" x="270" y="0">₹</tspan><tspan class="st3" x="285" y="0">100</tspan></text>
   <text  class="st4" transform="translate(211.25 75.56) scale(.99 1)"><tspan class="st5" x="0" y="0">₹</tspan><tspan class="st3" x="42.22" y="0">450</tspan></text>
 </svg>

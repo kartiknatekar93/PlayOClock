@@ -97,3 +97,102 @@ html {
     @content;
   }
 }
+
+@mixin shakeanim($name) {
+  @keyframes #{$name} {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+    75% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+@mixin opennowanim($name) {
+  @keyframes #{$name} {
+    0% {
+      transform: scale(0.4) rotate(0deg);
+    }
+
+    10% {
+      transform: scale(0.4) rotate(-20deg);
+    }
+
+    20% {
+      transform: scale(0.8) rotate(0deg);
+    }
+
+    30% {
+      transform: scale(1) rotate(-20deg);
+    }
+
+    40% {
+      transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+      transform: scale(1) rotate(-20deg);
+    }
+
+    60% {
+      transform: scale(1) rotate(0deg);
+    }
+
+    70% {
+      transform: scale(1) rotate(-20deg);
+    }
+
+    80% {
+      transform: scale(0.8) rotate(0deg);
+    }
+
+    90% {
+      transform: scale(0.4) rotate(-20deg);
+    }
+
+    100% {
+      transform: scale(0.4) rotate(0deg);
+    }
+  }
+}
+
+@mixin emojianim($name, $Y1, $Y2, $Y3, $R1, $R2, $R3) {
+  @keyframes #{$name} {
+    0% {
+      transform: translateY($Y1) rotate(#{$R1}deg);
+    }
+
+    50% {
+      transform: translateY($Y2) rotate(#{$R2}deg);
+    }
+
+    100% {
+      transform: translateY($Y3) rotate(#{$R3}deg);
+    }
+  }
+}
+@mixin emojianim2($name, $Y1, $Y2, $Y3, $R1, $R2, $R3) {
+  @keyframes #{$name} {
+    0% {
+      transform: translateX($Y1) rotate(#{$R1}deg);
+    }
+
+    50% {
+      transform: translateX($Y2) rotate(#{$R2}deg);
+    }
+
+    100% {
+      transform: translateX($Y3) rotate(#{$R3}deg);
+    }
+  }
+}

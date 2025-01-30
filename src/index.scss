@@ -183,8 +183,11 @@
             bottom: 0;
             left: 0;
             transform: translate(-50%, 20%);
+
             img {
               width: 100%;
+              animation: opennow 3s ease-in-out infinite forwards;
+              @include opennowanim(opennow);
             }
             @include tablet {
               display: flex;
@@ -245,6 +248,8 @@
     position: absolute;
     width: 20%;
     padding: 4.8rem;
+    @include emojianim(emoji1, 20px, -20px, 20px, 10, -10, 10);
+    animation: emoji1 5s ease-in-out infinite;
     @include tablet {
       width: 25%;
     }
@@ -430,6 +435,8 @@
     bottom: 10%;
     left: 0;
     z-index: 2;
+    @include emojianim2(emoji2, 20px, -10px, 20px, 10, -10, 10);
+    animation: emoji2 5s ease-in-out infinite;
     @include laptop {
       top: 0;
       right: 0;
@@ -474,6 +481,8 @@
         text-transform: uppercase;
       }
       .about-us-text {
+        position: relative;
+        z-index: 2;
         font-family: Regular;
         color: #e6e6e6;
         font-size: 3rem;
@@ -519,11 +528,12 @@
       }
 
       .bg-1 {
-        z-index: 2;
+        // z-index: 2;
         position: absolute;
         bottom: 0;
         width: 30%;
         transform: translate(-60%, 50%);
+
         @include tablet {
           display: none;
         }
@@ -541,6 +551,8 @@
 
         img {
           width: 100%;
+          animation: opennow 3s ease-in-out infinite forwards;
+          @include opennowanim(opennow1);
         }
       }
     }
@@ -566,12 +578,13 @@
     margin: 0 auto;
     padding: 4rem;
     z-index: 5;
+    padding-top: 0;
     @include tablet {
       padding-left: 10rem;
       padding-right: 10rem;
     }
     @include iphone {
-      padding: 0 6rem 0 6rem;
+      padding: 0 6rem 6rem 6rem;
     }
     .heading-primary {
       margin: 0 auto;
@@ -669,7 +682,7 @@
       font-family: Italic;
       color: #e6e6e6;
       text-align: center;
-      margin-top: 10rem;
+      margin-top: 5rem;
       .mailto {
         margin-bottom: 2px;
         span {
@@ -692,8 +705,11 @@
     width: 15%;
     transform: translate(-20%, -20%) scaleX(-1) rotateZ(-10deg);
     z-index: 4;
+
     img {
       width: 100%;
+      @include emojianim(emoji3, -20px, 0px, -20px, 10, -10, 10);
+      animation: emoji3 5s ease-in-out infinite;
     }
   }
   .bg-2 {
@@ -774,4 +790,49 @@ textarea:focus {
 .fade {
   animation-name: fade;
   animation-duration: 3s;
+}
+.input-shake {
+  @include shakeanim(shake);
+  animation: shake 0.2s ease-in-out;
+}
+
+.warning-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: auto;
+  background-color: #4465b0;
+  color: white;
+  padding: 1rem 1rem;
+  border-radius: 4px;
+  font-size: 3rem;
+  margin-top: 1rem;
+  z-index: 999;
+  font-family: Regular;
+  // overflow: hidden;
+  height: 0;
+  transition: height 0.3s;
+}
+
+.warning-box.show {
+  height: 5rem;
+}
+
+.warning-box::before {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  left: 2rem;
+  width: 0;
+  height: 0;
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
+  border-bottom: 2rem solid #4465b0;
+}
+
+.thankyou {
+  text-align: center;
+  color: #ddd;
+  font-family: Regular;
+  font-size: 2rem;
 }
