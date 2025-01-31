@@ -2,7 +2,6 @@ import "./index.scss";
 import { activateEnquiry } from "./enquiry";
 
 const images = [
-  "slideimg1.png",
   "slideimg2.png",
   "slideimg3.png",
   "slideimg4.png",

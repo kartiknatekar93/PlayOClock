@@ -16,13 +16,13 @@
     .hero {
       opacity: 1;
       position: relative;
-      max-width: 130rem;
+      max-width: 140rem;
       width: 100%;
       height: 100%;
       display: grid;
       grid-template-columns: 1fr 20vw;
       margin: 0 auto;
-      padding: 4rem;
+      padding: 2rem;
       // padding-top: 0rem;
       max-height: 90dvh;
       justify-content: center;
@@ -44,16 +44,16 @@
         gap: 1rem;
       }
       @include iphone {
-        padding: 4rem;
+        padding: 2rem;
       }
       .hero-textbox {
         position: relative;
         color: white;
         .heading-primary {
           font-family: Roundedltblack !important;
-          font-size: 3rem;
+          font-size: 3.5rem;
           font-weight: 900;
-          text-transform: uppercase;
+          // text-transform: uppercase;
           text-align: center;
           margin-bottom: 0;
         }
@@ -74,19 +74,17 @@
         }
 
         .heading-secondary {
-          margin-top: 0;
+          margin: 0;
           font-size: 2rem;
           font-family: Roundedltblack;
           text-align: center;
-          margin-bottom: 1rem;
         }
 
         .location {
           display: flex;
           justify-content: center;
           align-items: center;
-          gap: 1rem;
-          font-size: 1.5rem;
+          font-size: 1.8rem;
           .map-icon {
             width: 5%;
             img {
@@ -166,7 +164,7 @@
           justify-content: center;
           font-family: Italic;
           color: white;
-          font-size: 1.5rem;
+          font-size: 2rem;
           padding-bottom: 1rem;
           @include tablet-s {
             display: flex;
@@ -187,15 +185,22 @@
           .co-located-text {
             font-family: Regular;
             text-transform: uppercase;
+            font-size: 2rem;
           }
           .rr-logo {
-            width: 15%;
+            width: 9rem;
+            @include iphone {
+              width: 7rem;
+            }
             img {
               width: 100%;
             }
           }
           .ccc-logo {
-            width: 30%;
+            width: 18rem;
+            @include iphone {
+              width: 15rem;
+            }
             img {
               width: 100%;
             }
