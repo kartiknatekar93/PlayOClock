@@ -3,13 +3,16 @@
 .section-hero {
   position: relative;
   background-color: #ec2838;
-  height: 90vh;
+  height: calc(100dvh - 10dvh);
   overflow: hidden;
   .hero-middle {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100%;
+    // height: 90vh;
+    // height: calc(100vh - 20vh);
+    // max-height: calc(100vh - 10vh);
     .hero {
       opacity: 1;
       position: relative;
@@ -20,20 +23,23 @@
       grid-template-columns: 1fr 20vw;
       margin: 0 auto;
       padding: 4rem;
-      max-height: 90vh;
+      // padding-top: 0rem;
+      max-height: 90dvh;
       justify-content: center;
       align-items: center;
       gap: 4.8rem;
       z-index: 1;
       @include tablet {
         grid-template-columns: 1fr;
-        grid-template-rows: 40vh 40vh;
+        // grid-template-rows: 40vh 40vh
+        grid-template-rows: auto auto;
         padding: 10rem 10rem 0 10rem;
         gap: 1rem;
       }
       @include tablet-portrait {
         grid-template-columns: 1fr;
-        grid-template-rows: 40vh 40vh;
+        // grid-template-rows: 40vh 40vh;
+        grid-template-rows: auto auto;
         padding: 10rem 10rem 0 10rem;
         gap: 1rem;
       }
@@ -45,20 +51,31 @@
         color: white;
         .heading-primary {
           font-family: Roundedltblack !important;
-          font-size: 4rem;
+          font-size: 3rem;
           font-weight: 900;
           text-transform: uppercase;
           text-align: center;
           margin-bottom: 0;
         }
-        .title-img {
-          .img {
-            width: 100%;
+        .titlemiddle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          .title-img {
+            width: 60rem;
+            @include iphone {
+              width: 40rem;
+            }
+            .img {
+              width: 100%;
+            }
           }
         }
+
         .heading-secondary {
           margin-top: 0;
-          font-size: 3rem;
+          font-size: 2rem;
           font-family: Roundedltblack;
           text-align: center;
           margin-bottom: 1rem;
@@ -92,12 +109,65 @@
             }
           }
         }
+        .banner-1,
+        .banner-2,
+        .banner-3 {
+          width: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          .img1 {
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fbc613;
+            border-radius: 2rem;
+            padding: 4px;
+            @include tablet-s {
+              padding: 2px;
+            }
+            @include iphone {
+              padding: 2px;
+            }
+            img {
+              width: 4rem;
+              height: auto;
+              @include iphone {
+                width: 2rem;
+              }
+            }
+            .text {
+              color: black;
+              width: auto;
+              font-family: Regular;
+              font-size: 1.5rem;
+              text-transform: uppercase;
+              @include tablet-s {
+                font-size: 1.4rem;
+              }
+              @include mobile-l {
+                font-size: 1.3rem;
+              }
+              @include iphone {
+                font-size: 1.3rem;
+              }
+            }
+          }
+        }
+        .banner-2,
+        .banner-3 {
+          padding-top: 0.5rem;
+        }
+
         .map-link-mobile {
           display: none;
           justify-content: center;
           font-family: Italic;
           color: white;
           font-size: 1.5rem;
+          padding-bottom: 1rem;
           @include tablet-s {
             display: flex;
           }
@@ -134,7 +204,9 @@
       }
       .hero-vidbox {
         position: relative;
-        height: 100%;
+        // width: 100%;
+        // height: 100%;
+        height: auto;
         @include tablet {
           display: flex;
           justify-content: center;
@@ -152,9 +224,11 @@
           align-items: start;
           width: 100%;
           height: 100%;
+          max-height: 100%;
           .video {
             width: 100%;
-            height: 100%;
+            // height: 100%;
+            height: auto;
             border-radius: 3rem;
             box-shadow: 0 0 10px grey;
             max-width: 100%;
@@ -285,6 +359,8 @@
   min-height: 10vh;
   background-color: #4465b0;
   z-index: 10;
+  bottom: 0;
+  left: 0;
   .logo {
     display: block;
     width: 20%;
