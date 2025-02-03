@@ -107,15 +107,11 @@
               <p class="address">
                 We're located in Indiranagar/Domlur near EGL.
               </p>
-              <a
-                class="map-link"
-                href="https://maps.app.goo.gl/2ykojmsBRgwoF7pn8"
+              <a class="map-link" href="#" onclick="mymap()"
                 >Click here for our Google Maps location.</a
               >
             </div>
-            <a
-              class="map-link-mobile"
-              href="https://maps.app.goo.gl/2ykojmsBRgwoF7pn8"
+            <a class="map-link-mobile" href="#" onclick="mymap()"
               >Click here for our Google Maps location.</a
             >
             <div class="banner-1">
@@ -164,14 +160,16 @@
               <p class="co-located-text">co-located with</p>
               <div class="rr-logo">
                 <a
-                  href="https://rhythmandrootsstudio.com/"
+                  href="#"
+                  onclick="myrrs()"
                   style="display: block; width: 100%"
                   ><img src="Images/RRSLogo.svg" alt=""
                 /></a>
               </div>
               <div class="ccc-logo">
                 <a
-                  href="https://www.cupandcrumblecafe.com/"
+                  href=""
+                  onclick="myccc()"
                   style="display: block; width: 100%"
                 >
                   <img src="Images/CCCLogo.svg" alt=""
@@ -283,7 +281,7 @@
             explore, interact and play in a safe, vibrant, and fun-filled
             environment.
           </p>
-          <p class="about-us-text">
+          <p class="about-us-text2">
             Perfect for birthday parties and special events, Play O'Clock
             provides a memorable experience with dedicated event spaces, custom
             decorations, and kid-friendly catering options. Join us at Play
@@ -395,4 +393,15 @@
       </div>
     </section>
   </body>
+  <script>
+    function mymap() {
+      window.open("https://maps.app.goo.gl/2ykojmsBRgwoF7pn8");
+    }
+    function myrrs() {
+      window.open("https://rhythmandrootsstudio.com/");
+    }
+    function myccc() {
+      window.open("https://www.cupandcrumblecafe.com/");
+    }
+  </script>
 </html>

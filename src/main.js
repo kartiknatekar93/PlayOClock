@@ -104,3 +104,13 @@ close.addEventListener("click", function (e) {
 });
 
 activateEnquiry("PlayOClock");
+
+function mymap() {
+  window.open("https://maps.app.goo.gl/2ykojmsBRgwoF7pn8");
+}
+function myrrs() {
+  window.open("https://www.w3schools.com");
+}
+function myccc() {
+  window.open("https://www.w3schools.com");
+}

@@ -56,6 +56,9 @@
           // text-transform: uppercase;
           text-align: center;
           margin-bottom: 0;
+          @include tablet-s {
+            font-size: 4rem;
+          }
         }
         .titlemiddle {
           display: flex;
@@ -64,8 +67,14 @@
           width: 100%;
           .title-img {
             width: 60rem;
+            @include tablet-s {
+              width: 50rem;
+            }
             @include iphone {
               width: 40rem;
+            }
+            @include mobile-s {
+              width: 50rem;
             }
             .img {
               width: 100%;
@@ -78,6 +87,9 @@
           font-size: 2rem;
           font-family: Roundedltblack;
           text-align: center;
+          @include tablet-s {
+            font-size: 3rem;
+          }
         }
 
         .location {
@@ -85,6 +97,9 @@
           justify-content: center;
           align-items: center;
           font-size: 1.8rem;
+          @include tablet-s {
+            font-size: 2.2rem;
+          }
           .map-icon {
             width: 5%;
             img {
@@ -124,16 +139,22 @@
             border-radius: 2rem;
             padding: 4px;
             @include tablet-s {
-              padding: 2px;
+              padding: 1px;
             }
-            @include iphone {
-              padding: 2px;
-            }
+            // @include iphone {
+            //   padding: 2px;
+            // }
             img {
               width: 4rem;
               height: auto;
+              @include tablet-s {
+                width: 5rem;
+              }
               @include iphone {
                 width: 2rem;
+              }
+              @include mobile-s {
+                width: 5rem;
               }
             }
             .text {
@@ -145,12 +166,12 @@
               @include tablet-s {
                 font-size: 1.4rem;
               }
-              @include mobile-l {
-                font-size: 1.3rem;
-              }
-              @include iphone {
-                font-size: 1.3rem;
-              }
+              // @include mobile-l {
+              //   font-size: 1.3rem;
+              // }
+              // @include iphone {
+              //   font-size: 1.3rem;
+              // }
             }
           }
         }
@@ -165,8 +186,9 @@
           font-family: Italic;
           color: white;
           font-size: 2rem;
-          padding-bottom: 1rem;
+          padding-bottom: 2rem;
           @include tablet-s {
+            font-size: 2.2rem;
             display: flex;
           }
         }
@@ -175,6 +197,7 @@
           align-items: center;
           justify-content: center;
           gap: 1rem;
+          padding-top: 1rem;
           @include tablet {
             justify-content: center;
           }
@@ -189,8 +212,14 @@
           }
           .rr-logo {
             width: 9rem;
+            @include tablet-s {
+              width: 10rem;
+            }
             @include iphone {
               width: 7rem;
+            }
+            @include mobile-s {
+              width: 10rem;
             }
             img {
               width: 100%;
@@ -198,8 +227,14 @@
           }
           .ccc-logo {
             width: 18rem;
+            @include tablet-s {
+              width: 20rem;
+            }
             @include iphone {
               width: 15rem;
+            }
+            @include mobile-s {
+              width: 20rem;
             }
             img {
               width: 100%;
@@ -230,6 +265,10 @@
           width: 100%;
           height: 100%;
           max-height: 100%;
+          @include tablet-s {
+            width: 80%;
+            height: 80%;
+          }
           .video {
             width: 100%;
             // height: 100%;
@@ -358,7 +397,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4.8rem;
+  padding: 0 2rem;
   position: sticky;
   top: 0;
   min-height: 10vh;
@@ -454,8 +493,8 @@
   .pricing {
     position: relative;
     margin: 0 auto;
-    max-width: 130rem;
-    padding: 4rem;
+    max-width: 140rem;
+    padding: 2rem;
     z-index: 3;
     @include tablet {
       padding: 5rem 10rem 0 10rem;
@@ -479,6 +518,9 @@
       color: #e6e6e6;
       font-size: 3rem;
       text-align: center;
+      @include tablet-s {
+        font-size: 4rem;
+      }
     }
     .pricing-img {
       display: grid;
@@ -542,8 +584,8 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    max-width: 130rem;
-    padding: 4rem;
+    max-width: 140rem;
+    padding: 2rem;
     gap: 4.8rem;
     @include laptop {
       padding: 6rem;
@@ -571,9 +613,25 @@
         z-index: 2;
         font-family: Regular;
         color: #e6e6e6;
-        font-size: 3rem;
+        font-size: 2.5rem;
         text-align: center;
         margin: 0;
+        @include tablet-s {
+          font-size: 3.5rem;
+        }
+      }
+      .about-us-text2 {
+        position: relative;
+        z-index: 2;
+        font-family: Regular;
+        color: #e6e6e6;
+        font-size: 2.5rem;
+        text-align: center;
+        margin: 0;
+        margin-top: 2rem;
+        @include tablet-s {
+          font-size: 3.5rem;
+        }
       }
     }
     .slider-show {
@@ -619,7 +677,7 @@
         position: absolute;
         bottom: 0;
         width: 30%;
-        transform: translate(-60%, 50%);
+        transform: translate(-40%, 30%);
 
         @include tablet {
           display: none;
@@ -661,9 +719,9 @@
   background-color: #ec2838;
   .contact {
     position: relative;
-    max-width: 130rem;
+    max-width: 140rem;
     margin: 0 auto;
-    padding: 4rem;
+    padding: 2rem;
     z-index: 5;
     padding-top: 0;
     @include tablet {
@@ -688,6 +746,9 @@
       color: #e6e6e6;
       font-size: 3rem;
       text-align: center;
+      @include tablet-s {
+        font-size: 4rem;
+      }
     }
     .form-fill {
       position: relative;
