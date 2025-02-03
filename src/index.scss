@@ -139,7 +139,12 @@
             border-radius: 2rem;
             padding: 4px;
             @include tablet-s {
-              padding: 1px;
+              padding: 5px;
+              border-radius: 4rem;
+            }
+            @include mobile-s {
+              padding: 8px;
+              border-radius: 4rem;
             }
             // @include iphone {
             //   padding: 2px;
@@ -151,10 +156,10 @@
                 width: 5rem;
               }
               @include iphone {
-                width: 2rem;
+                width: 3rem;
               }
               @include mobile-s {
-                width: 5rem;
+                width: 3rem;
               }
             }
             .text {
@@ -164,7 +169,10 @@
               font-size: 1.5rem;
               text-transform: uppercase;
               @include tablet-s {
-                font-size: 1.4rem;
+                font-size: 1.5rem;
+              }
+              @include mobile-s {
+                font-size: 1.5rem;
               }
               // @include mobile-l {
               //   font-size: 1.3rem;
@@ -199,6 +207,7 @@
           gap: 1rem;
           padding-top: 1rem;
           @include tablet {
+            display: none;
             justify-content: center;
           }
           @include tablet-portrait {
@@ -208,7 +217,7 @@
           .co-located-text {
             font-family: Regular;
             text-transform: uppercase;
-            font-size: 2rem;
+            font-size: 1.5rem;
           }
           .rr-logo {
             width: 9rem;
@@ -519,7 +528,7 @@
       font-size: 3rem;
       text-align: center;
       @include tablet-s {
-        font-size: 4rem;
+        font-size: 3.5rem;
       }
     }
     .pricing-img {
@@ -747,7 +756,7 @@
       font-size: 3rem;
       text-align: center;
       @include tablet-s {
-        font-size: 4rem;
+        font-size: 3.5rem;
       }
     }
     .form-fill {
@@ -852,9 +861,60 @@
         }
       }
     }
+    .co-located {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding-top: 1rem;
+      color: white;
+      @include tablet {
+        display: flex;
+        justify-content: center;
+      }
+      @include tablet-portrait {
+        justify-content: center;
+      }
+
+      .co-located-text {
+        font-family: Regular;
+        text-transform: uppercase;
+        font-size: 2rem;
+      }
+      .rr-logo {
+        width: 9rem;
+        @include tablet-s {
+          width: 10rem;
+        }
+        @include iphone {
+          width: 7rem;
+        }
+        @include mobile-s {
+          width: 10rem;
+        }
+        img {
+          width: 100%;
+        }
+      }
+      .ccc-logo {
+        width: 18rem;
+        @include tablet-s {
+          width: 20rem;
+        }
+        @include iphone {
+          width: 15rem;
+        }
+        @include mobile-s {
+          width: 20rem;
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
 
     .footer {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-family: Italic;
       color: #e6e6e6;
       text-align: center;
