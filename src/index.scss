@@ -494,7 +494,7 @@
     position: relative;
     margin: 0 auto;
     max-width: 140rem;
-    padding: 2rem;
+    padding: 4.8rem 2rem;
     z-index: 3;
     @include tablet {
       padding: 5rem 10rem 0 10rem;
@@ -585,7 +585,7 @@
     align-items: center;
     margin: 0 auto;
     max-width: 140rem;
-    padding: 2rem;
+    padding: 4.8rem 2rem;
     gap: 4.8rem;
     @include laptop {
       padding: 6rem;
@@ -676,8 +676,8 @@
         // z-index: 2;
         position: absolute;
         bottom: 0;
-        width: 30%;
-        transform: translate(-40%, 30%);
+        width: 20%;
+        transform: translate(-60%, 30%);
 
         @include tablet {
           display: none;
@@ -721,7 +721,7 @@
     position: relative;
     max-width: 140rem;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 4.8rem 2rem;
     z-index: 5;
     padding-top: 0;
     @include tablet {
